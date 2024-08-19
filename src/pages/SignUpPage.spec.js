@@ -3,21 +3,23 @@ import SignUpPage from './SignUpPage';
 
 describe('SignUpPage', () => {
   describe('Layout', () => {
-    it('has header', () => {
+    it('has render', () => {
       render(<SignUpPage />);
-      const header = screen.queryByRole('heading', { name: /Sign Up/i });
+      const header = screen.queryByRole('heading', { name: 'Sign Up' });
       expect(header).toBeInTheDocument();
     });
 
-    it('has username inpust', () => {
+    it('has username input', () => {
       render(<SignUpPage />);
       const input = screen.getByLabelText('UserName');
+
       expect(input).toBeInTheDocument();
     });
 
     it('has email input', () => {
       render(<SignUpPage />);
       const input = screen.getByLabelText('Email');
+
       expect(input).toBeInTheDocument();
     });
   });
