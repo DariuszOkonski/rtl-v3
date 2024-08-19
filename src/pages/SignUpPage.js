@@ -14,6 +14,11 @@ class SignUpPage extends React.Component {
 
         <label htmlFor='password'>Password</label>
         <input type='password' name='password' id='password' />
+
+        <label htmlFor='passwordRepeat'>Password Repeat</label>
+        <input type='password' name='passwordRepeat' id='passwordRepeat' />
+
+        <button disabled>Sign Up</button>
       </div>
     );
   }
