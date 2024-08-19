@@ -9,7 +9,7 @@ describe('SignUpPage', () => {
       expect(header).toBeInTheDocument();
     });
 
-    it('has username input', () => {
+    it('has username inpust', () => {
       render(<SignUpPage />);
       const input = screen.getByLabelText('UserName');
       expect(input).toBeInTheDocument();
