@@ -12,14 +12,18 @@ describe('SignUpPage', () => {
     it('has username input', () => {
       render(<SignUpPage />);
       const input = screen.getByLabelText('UserName');
-
       expect(input).toBeInTheDocument();
     });
 
     it('has email input', () => {
       render(<SignUpPage />);
       const input = screen.getByLabelText('Email');
+      expect(input).toBeInTheDocument();
+    });
 
+    it('has password input', () => {
+      render(<SignUpPage />);
+      const input = screen.getByLabelText('Password');
       expect(input).toBeInTheDocument();
     });
   });
