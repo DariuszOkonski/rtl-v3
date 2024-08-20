@@ -2,17 +2,31 @@ import React from 'react';
 
 class SignUpPage extends React.Component {
   state = {
-    disabled: true,
+    password: '',
+    passwordRepeat: '',
   };
 
-  onChangePassword = () => {};
+  onChangePassword = (event) => {
+    const currentValue = event.target.value;
+    this.setState({
+      password: currentValue,
+    });
+  };
+
+  onChangePasswordRepeat = (event) => {
+    const currentValue = event.target.value;
+    this.setState({
+      passwordRepeat: currentValue,
+    });
+  };
 
   render() {
-    // setTimeout(() => {
-    //   this.setState({
-    //     disabled: false,
-    //   });
-    // });
+    let disabled = true;
+    const { password, passwordRepeat } = this.state;
+
+    if (password && passwordRepeat) {
+      disabled = password !== passwordRepeat;
+    }
 
     return (
       <div>
@@ -20,9 +34,11 @@ class SignUpPage extends React.Component {
 
         <label htmlFor='username'>UserName</label>
         <input type='text' id='username' />
+        <br />
 
         <label htmlFor='email'>Email</label>
         <input type='email' id='email' />
+        <br />
 
         <label htmlFor='password'>Password</label>
         <input
@@ -31,11 +47,18 @@ class SignUpPage extends React.Component {
           id='password'
           onChange={this.onChangePassword}
         />
+        <br />
 
         <label htmlFor='passwordRepeat'>Password Repeat</label>
-        <input type='password' name='passwordRepeat' id='passwordRepeat' />
+        <input
+          type='password'
+          name='passwordRepeat'
+          id='passwordRepeat'
+          onChange={this.onChangePasswordRepeat}
+        />
+        <br />
 
-        <button disabled={this.state.disabled}>Sign Up</button>
+        <button disabled={disabled}>Sign Up</button>
       </div>
     );
   }
