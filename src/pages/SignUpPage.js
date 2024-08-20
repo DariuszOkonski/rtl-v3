@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 class SignUpPage extends React.Component {
   state = {
@@ -40,7 +40,7 @@ class SignUpPage extends React.Component {
   submit = () => {
     const { username, email, password } = this.state;
     const body = { username, email, password };
-    axios.post('/api/1.0/users', body);
+    // axios.post('/api/1.0/users', body);
   };
 
   render() {
